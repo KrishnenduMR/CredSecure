@@ -1,5 +1,2 @@
-# Credit-Card-Fraud-Detection-ML-DL-project
+# Credit Card Fraud Detection
 
-done by - Krishnendu M R, 
-          Akshaya Srikrishna and 
-          Anagha Srikrishna
