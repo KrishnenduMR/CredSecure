@@ -4,12 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Credit Card Fraud Detection</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='style4.css') }}">
     <style>
         /* General styles */
         body {
             font-family: 'Arial', sans-serif;
-            background-color: #f8f9fa;
+            background-color: #ffeef0; /* Very light pink */
             color: #343a40;
             margin: 0;
             padding: 0;
@@ -18,64 +17,77 @@
             max-width: 1200px;
             width: 100%;
             margin: 0 auto;
+            padding: 20px;
         }
 
         /* Header styling */
         h1 {
             font-size: 36px;
-            color: #007bff;
-            margin-bottom: 10px;
+            color: #0056b3; /* Deep blue for a professional tone */
+            margin-bottom: 20px;
             text-align: center;
         }
         h2 {
             font-size: 28px;
-            color: #007bff;
-            margin-top: 30px;
+            color: #0056b3;
+            margin-top: 20px;
             margin-bottom: 15px;
             text-align: center;
         }
 
         /* General Card Layout */
         .card {
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Softer shadow for modern feel */
             border-radius: 10px;
             padding: 20px;
             margin-bottom: 30px;
             box-sizing: border-box;
+            border: 1px solid #dcdde1; /* Subtle border for definition */
         }
         .card p {
             font-size: 16px;
-            line-height: 1.6;
+            line-height: 1.8;
             text-align: justify;
-            color: #555;
+            color: #495057; /* Slightly lighter text color for readability */
         }
 
         /* Specific Card Styles */
         .card1 {
-            background-color: #e9ecef;
+            background-color: #e3f2fd; /* Very light blue */
         }
         .card2 {
-            background-color: #ffffff;
+            background-color: #ffffff; /* Pure white */
         }
         .card3 {
-            background-color: #f8f9fa;
+            background-color: #fef8e7; /* Soft yellow */
         }
 
         /* Section Layout for 3 columns */
         .section {
             display: grid;
-            grid-template-columns: repeat(3, 1fr);  /* 3 equal columns */
-            gap: 20px;  /* Space between columns */
-            padding: 20px;
+            grid-template-columns: repeat(3, 1fr); /* 3 equal columns */
+            gap: 20px; /* Space between columns */
+        }
+
+        /* Image Styling */
+        .image-container {
+            text-align: center;
+            margin-top: 20px;
+        }
+        .image-container img {
+            max-width: 100%; /* Ensure the image is responsive */
+            height: auto;
+            border-radius: 10px; /* Optional: Adds rounded corners to the image */
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Shadow to match the cards */
         }
 
         /* Responsive Design */
         @media (max-width: 1024px) {
             .section {
-                grid-template-columns: 1fr;  /* Stack into a single column on smaller screens */
+                grid-template-columns: 1fr; /* Stack into a single column on smaller screens */
             }
             .card {
-                width: 100%;  /* Cards take full width in a single column */
+                width: 100%; /* Cards take full width in a single column */
             }
             h1 {
                 font-size: 28px;
@@ -87,10 +99,10 @@
 
         @media (max-width: 768px) {
             .section {
-                grid-template-columns: 1fr;  /* Stack into a single column on small screens */
+                grid-template-columns: 1fr; /* Stack into a single column on small screens */
             }
             .card {
-                width: 100%;  /* Full width for cards */
+                width: 100%; /* Full width for cards */
             }
             h1 {
                 font-size: 28px;
@@ -129,6 +141,13 @@
                     Fraud not only results in financial loss but also damages the reputation of banks and erodes customer trust. Fraud detection is vital to minimize financial risks and maintain trust in the banking system. With the rise of online transactions, real-time fraud detection is more critical than ever.
                 </p>
             </div>
+        </div>
+
+        <!-- Image Section -->
+        <div class="image-container">
+            <img src="/static/creditcard.jpeg" style="width: 600px; height: 200px;" alt="Credit Card Fraud Detection Visualization">
+
+
         </div>
     </div>
 </body>
