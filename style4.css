@@ -1,0 +1,74 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    font-family: Arial;
+}
+body {
+    width:100%;
+    background: linear-gradient(to top, rgb(216, 219, 147)50%, rgb(216,219,147)50%), url(1.jpg);
+}
+.title h1{
+    text-align: center;
+    padding-top: 50px;
+    font-size: 50px ;
+    color: #ff7200;
+}
+.title h1::after {
+    content: "";
+    height: 4px;
+    width: 230px;
+    background-color: #000;
+    display: block;
+    margin: auto;
+}
+.about {
+    width: 85%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 75px auto;
+    text-align: center;
+}
+.card {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: column;
+    margin: 0px 20px;
+    padding: 20px 20px;
+    background: linear-gradient(to top, rgba(0,0,0,0.8)50%,rgba(0,0,0,0.8)50%);
+    border-radius: 10px;
+    cursor: pointer;
+}
+.card h2{
+    font-size: 30px;
+    color: #ff7200;
+    margin-bottom: 20px;
+}
+.card h4 {
+    font-size: 20px;
+    margin-bottom: 30px;
+    line-height: 1.5;
+    color: #fefefe;
+}
+.icons {
+    display: flex; /* Use flexbox to arrange icons horizontally */
+    justify-content: center; /* Center the icons horizontally */
+    gap: 10px; /* Add space between icons */
+    margin-top: 20px; /* Add space above the icons */
+}
+.icons a {
+    text-decoration: none; /* Remove underline from links */
+    color: #fff; /* Set icon color */
+}
+.icons ion-icon {
+    color: #fff; /* Set icon color */
+    font-size: 30px; /* Set icon size */
+    padding: 5px; /* Add some padding around icons */
+    transition: 0.3s ease; /* Smooth color transition on hover */
+}
+.icons ion-icon:hover {
+    color: #ff7200; /* Change icon color on hover */
+}

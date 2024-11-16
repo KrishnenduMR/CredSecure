@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Credit Card Fraud Detection</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style4.css') }}">
+    <style>
+        /* General styles */
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f8f9fa;
+            color: #343a40;
+            margin: 0;
+            padding: 0;
+        }
+        .content {
+            max-width: 1200px;
+            width: 100%;
+            margin: 0 auto;
+        }
+
+        /* Header styling */
+        h1 {
+            font-size: 36px;
+            color: #007bff;
+            margin-bottom: 10px;
+            text-align: center;
+        }
+        h2 {
+            font-size: 28px;
+            color: #007bff;
+            margin-top: 30px;
+            margin-bottom: 15px;
+            text-align: center;
+        }
+
+        /* General Card Layout */
+        .card {
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+            padding: 20px;
+            margin-bottom: 30px;
+            box-sizing: border-box;
+        }
+        .card p {
+            font-size: 16px;
+            line-height: 1.6;
+            text-align: justify;
+            color: #555;
+        }
+
+        /* Specific Card Styles */
+        .card1 {
+            background-color: #e9ecef;
+        }
+        .card2 {
+            background-color: #ffffff;
+        }
+        .card3 {
+            background-color: #f8f9fa;
+        }
+
+        /* Section Layout for 3 columns */
+        .section {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);  /* 3 equal columns */
+            gap: 20px;  /* Space between columns */
+            padding: 20px;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 1024px) {
+            .section {
+                grid-template-columns: 1fr;  /* Stack into a single column on smaller screens */
+            }
+            .card {
+                width: 100%;  /* Cards take full width in a single column */
+            }
+            h1 {
+                font-size: 28px;
+            }
+            h2 {
+                font-size: 24px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .section {
+                grid-template-columns: 1fr;  /* Stack into a single column on small screens */
+            }
+            .card {
+                width: 100%;  /* Full width for cards */
+            }
+            h1 {
+                font-size: 28px;
+            }
+            h2 {
+                font-size: 22px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="content">
+        <h1>Credit Card Fraud Detection</h1>
+
+        <div class="section">
+            <!-- Card 1: Raising Awareness -->
+            <div class="card card1">
+                <h2>Raising Awareness About Credit Card Fraud</h2>
+                <p>
+                    Credit card fraud is a growing concern in the banking and financial industry, affecting millions globally. As the digital world expands, so do the threats. Fraudsters continuously adapt their tactics, making it essential for both consumers and financial institutions to stay informed and vigilant.
+                </p>
+            </div>
+
+            <!-- Card 2: Machine Learning -->
+            <div class="card card2">
+                <h2>How Machine Learning Helps in Fraud Detection</h2>
+                <p>
+                    Machine learning (ML) is revolutionizing how banks and financial institutions detect and prevent fraud. By analyzing large datasets of historical transactions, ML models identify suspicious patterns, providing faster and more accurate fraud detection than traditional methods.
+                </p>
+            </div>
+
+            <!-- Card 3: Fraud Detection Importance -->
+            <div class="card card3">
+                <h2>Why Fraud Detection is Crucial</h2>
+                <p>
+                    Fraud not only results in financial loss but also damages the reputation of banks and erodes customer trust. Fraud detection is vital to minimize financial risks and maintain trust in the banking system. With the rise of online transactions, real-time fraud detection is more critical than ever.
+                </p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

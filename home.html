@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CREDIT CARD FRAUD DETECTION SYSTEM</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="main">
+        <div class="navbar">
+            <div class="icon">
+                <h2 class="logo">CREDIT CARD FRAUD DETECTION SYSTEM</h2>
+            </div>
+            <div class="menu">
+                <ul>
+                    <li><a href="{{ url_for('home') }}" id="homeLink" class="disabled-link">HOME</a></li>
+                    <li><a href="{{ url_for('about') }}" id="aboutLink" class="disabled-link">ABOUT</a></li>
+                    <li><a href="{{ url_for('overview') }}" id="overviewLink" class="disabled-link">OVERVIEW</a></li>
+                    <li><a href="{{ url_for('predict') }}" id="detectionLink" class="disabled-link">DETECTION</a></li>
+                    <li><a href="{{ url_for('contact') }}" id="contactLink" class="disabled-link">CONTACT</a></li>
+                </ul>
+            </div>
+            <div class="search">
+                <input class="srch" type="search" name="" placeholder="Type To text">
+                <a href="https://www.google.com/"><button class="btn">Search</button></a>
+            </div>
+        </div> 
+        <div class="content">
+            <h1>Credit Card <br><span>Fraud Detection</span> <br>System</h1>
+            <p class="par">FraudShield's advanced Credit Card Fraud Detection System<br> efficiently distinguishes between normal and fraudulent transactions,<br> ensuring robust security and trust in financial transactions.</p>
+            <button class="cn"><a href="{{ url_for('signup') }}">JOIN US</a></button>
+            <form class="form" id="loginform" action="{{ url_for('login') }}" method="POST">
+                <h2>Login</h2>
+                <input type="text" id="username" name="username" placeholder="Enter Username Here" required>
+                <input type="password" id="password" name="password" placeholder="Enter Password Here" required>
+                <button class="btnn" type="submit">Login</button>
+                <p class="link">Don't have an account<br>
+                <a href="{{ url_for('signup') }}">Sign up</a> here</p>
+                <p class="liw">Log in with</p>
+                <div class="icons">
+                    <a href="https://www.facebook.com/"><ion-icon name="logo-facebook"></ion-icon></a>
+                    <a href="https://www.instagram.com/"><ion-icon name="logo-instagram"></ion-icon></a>
+                    <a href="https://github.com/"><ion-icon name="logo-github"></ion-icon></a>
+                    <a href="https://www.linkedin.com/"><ion-icon name="logo-linkedin"></ion-icon></a>
+                    <a href="https://www.skype.com/en/"><ion-icon name="logo-skype"></ion-icon></a>
+                </div>
+            </form>
+        </div>
+    </div>
+    <script>
+        // Initially disable the links
+        const links = document.querySelectorAll('.disabled-link');
+        links.forEach(link => link.style.pointerEvents = 'none');
+
+        document.getElementById('loginform').addEventListener('submit', function(event) {
+            event.preventDefault(); // Prevent the form from submitting
+
+            // Get the username and password values
+            const username = document.getElementById('username').value;
+            const password = document.getElementById('password').value;
+
+            // Perform a simple check (replace this with actual authentication logic)
+            if (username === 'admin' && password === 'password') {
+                // Enable the links after successful login
+                links.forEach(link => link.style.pointerEvents = 'auto');
+                alert('Logged In Successfully');
+                
+                // Redirect to overview.html
+                window.location.href = '{{ url_for('overview') }},id='overviewLink' ';
+            } else {
+                alert('Invalid username or password. Please try again.');
+            }
+        });
+    </script>
+    <script src="https://unpkg.com/ionicons@5.4.0/dist/ionicons.js"></script>
+    <script type="text/javascript">
+    	// Check for error message and display alert if it exists
+     	window.onload = function() {
+        	var error = "{{ error|default('') }}"; // Use the error passed from the Flask route
+        	if (error) {
+            		alert("Login failed: " + error);
+        	}
+    	};
+    </script>  
+</body>
+</html>
