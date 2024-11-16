@@ -1,4 +1,5 @@
 # Importing essential libraries
+from flask_socketio import SocketIO
 from flask import Flask, render_template, request,url_for,session,redirect
 import pickle
 import numpy as np
@@ -6,6 +7,7 @@ import numpy as np
 filename = 'credit-card-model.pkl'
 model = pickle.load(open('credit-card-model.pkl', 'rb'))
 app = Flask(__name__)
+socketio = SocketIO(app)
 app.secret_key = 'C16'
 # Home page route
 @app.route('/')
@@ -99,4 +101,4 @@ def logout():
     return redirect(url_for('home'))
 
 if __name__ == '__main__':
-    app.run()
+    socketio.run(app, debug=True)

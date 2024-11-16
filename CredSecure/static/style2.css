@@ -11,7 +11,7 @@ html, body {
 
 body {
     font-family: Arial, sans-serif;
-    background: linear-gradient(to top, rgba(0,0,0,0.5) 50%, rgba(0,0,0,0.5) 50%), url(1.jpg);
+    background: lightpink;
     background-position: center;
     background-size: cover;
     background-attachment: fixed;

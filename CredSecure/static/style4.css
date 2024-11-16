@@ -6,7 +6,7 @@
 }
 body {
     width:100%;
-    background: linear-gradient(to top, rgb(216, 219, 147)50%, rgb(216,219,147)50%), url(1.jpg);
+    background: lightpink;
 }
 .title h1{
     text-align: center;
