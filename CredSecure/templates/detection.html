@@ -3,8 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Detection - FraudShield Analytics</title>
-    <!-- Update the link to the CSS file to use the static folder -->
+    <title>Detection - CredSecure</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='style2.css') }}">
 </head>
 <body>
@@ -15,7 +14,6 @@
             </div>
             <div class="menu">
                 <ul>
-                    <!-- Update links to use url_for for routing -->
                     <li><a href="{{ url_for('home') }}">HOME</a></li>
                     <li><a href="{{ url_for('about') }}">ABOUT</a></li>
                     <li><a href="{{ url_for('overview') }}">OVERVIEW</a></li>
@@ -33,63 +31,63 @@
             <div class="center">
                 <form id="predictionForm" class="form" action="{{ url_for('predict') }}" method="POST">
                     <h2>Enter the Transactions</h2>
-                    <input type="text" id="v1" name="v1" placeholder="Enter value of v1">
+                    <input type="text" id="v1" name="v1" placeholder="Enter value of v1" value="1.106882529">
                     <br><br>
-                    <input type="text" id="v2" name="v2" placeholder="Enter value of v2">
+                    <input type="text" id="v2" name="v2" placeholder="Enter value of v2" value="-0.625284971">
                     <br><br>
-                    <input type="text" id="v3" name="v3" placeholder="Enter value of v3">
+                    <input type="text" id="v3" name="v3" placeholder="Enter value of v3" value="0.016134159">
                     <br><br>
-                    <input type="text" id="v4" name="v4" placeholder="Enter value of v4">
+                    <input type="text" id="v4" name="v4" placeholder="Enter value of v4" value="0.63776603">
                     <br><br>
-                    <input type="text" id="v5" name="v5" placeholder="Enter value of v5">
+                    <input type="text" id="v5" name="v5" placeholder="Enter value of v5" value="1.274893666">
                     <br><br>
-                    <input type="text" id="v6" name="v6" placeholder="Enter value of v6">
+                    <input type="text" id="v6" name="v6" placeholder="Enter value of v6" value="4.652265709">
                     <br><br>
-                    <input type="text" id="v7" name="v7" placeholder="Enter value of v7">
+                    <input type="text" id="v7" name="v7" placeholder="Enter value of v7" value="-1.398147779">
                     <br><br>
-                    <input type="text" id="v8" name="v8" placeholder="Enter value of v8">
+                    <input type="text" id="v8" name="v8" placeholder="Enter value of v8" value="1.261730024">
                     <br><br>
-                    <input type="text" id="v9" name="v9" placeholder="Enter value of v9">
+                    <input type="text" id="v9" name="v9" placeholder="Enter value of v9" value="1.437610994">
                     <br><br>
-                    <input type="text" id="v10" name="v10" placeholder="Enter value of v10">
+                    <input type="text" id="v10" name="v10" placeholder="Enter value of v10" value="-0.333888563">
                     <br><br>
-                    <input type="text" id="v11" name="v11" placeholder="Enter value of v11">
+                    <input type="text" id="v11" name="v11" placeholder="Enter value of v11" value="-1.203214291">
                     <br><br>
-                    <input type="text" id="v12" name="v12" placeholder="Enter value of v12">
+                    <input type="text" id="v12" name="v12" placeholder="Enter value of v12" value="0.624191964">
                     <br><br>
-                    <input type="text" id="v13" name="v13" placeholder="Enter value of v13">
+                    <input type="text" id="v13" name="v13" placeholder="Enter value of v13" value="-0.298471737">
                     <br><br>
-                    <input type="text" id="v14" name="v14" placeholder="Enter value of v14">
+                    <input type="text" id="v14" name="v14" placeholder="Enter value of v14" value="-0.836921491">
                     <br><br>
-                    <input type="text" id="v15" name="v15" placeholder="Enter value of v15">
+                    <input type="text" id="v15" name="v15" placeholder="Enter value of v15" value="-1.513934059">
                     <br><br>
-                    <input type="text" id="v16" name="v16" placeholder="Enter value of v16">
+                    <input type="text" id="v16" name="v16" placeholder="Enter value of v16" value="-0.292492235">
                     <br><br>
-                    <input type="text" id="v17" name="v17" placeholder="Enter value of v17">
+                    <input type="text" id="v17" name="v17" placeholder="Enter value of v17" value="-0.125566383">
                     <br><br>
-                    <input type="text" id="v18" name="v18" placeholder="Enter value of v18">
+                    <input type="text" id="v18" name="v18" placeholder="Enter value of v18" value="0.021985857">
                     <br><br>
-                    <input type="text" id="v19" name="v19" placeholder="Enter value of v19">
+                    <input type="text" id="v19" name="v19" placeholder="Enter value of v19" value="0.651371917">
                     <br><br>
-                    <input type="text" id="v20" name="v20" placeholder="Enter value of v20">
+                    <input type="text" id="v20" name="v20" placeholder="Enter value of v20" value="0.001376783">
                     <br><br>
-                    <input type="text" id="v21" name="v21" placeholder="Enter value of v21">
+                    <input type="text" id="v21" name="v21" placeholder="Enter value of v21" value="-0.222940323">
                     <br><br>
-                    <input type="text" id="v22" name="v22" placeholder="Enter value of v22">
+                    <input type="text" id="v22" name="v22" placeholder="Enter value of v22" value="-0.363615348">
                     <br><br>
-                    <input type="text" id="v23" name="v23" placeholder="Enter value of v23">
+                    <input type="text" id="v23" name="v23" placeholder="Enter value of v23" value="-0.106650818">
                     <br><br>
-                    <input type="text" id="v24" name="v24" placeholder="Enter value of v24">
+                    <input type="text" id="v24" name="v24" placeholder="Enter value of v24" value="1.03109475">
                     <br><br>
-                    <input type="text" id="v25" name="v25" placeholder="Enter value of v25">
+                    <input type="text" id="v25" name="v25" placeholder="Enter value of v25" value="0.688023833">
                     <br><br>
-                    <input type="text" id="v26" name="v26" placeholder="Enter value of v26">
+                    <input type="text" id="v26" name="v26" placeholder="Enter value of v26" value="-0.309427776">
                     <br><br>
-                    <input type="text" id="v27" name="v27" placeholder="Enter value of v27">
+                    <input type="text" id="v27" name="v27" placeholder="Enter value of v27" value="0.095728411">
                     <br><br>
-                    <input type="text" id="v28" name="v28" placeholder="Enter value of v28">
+                    <input type="text" id="v28" name="v28" placeholder="Enter value of v28" value="0.034236349">
                     <br><br>
-                    <input type="text" id="v29" name="v29" placeholder="Enter value of Amount">
+                    <input type="text" id="v29" name="v29" placeholder="Enter value of Amount" value="34.79">
                     <br><br>
                     <button type="submit" class="btnn">Predict</button>
                 </form>
