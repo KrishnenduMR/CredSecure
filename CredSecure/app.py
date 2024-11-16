@@ -5,8 +5,8 @@ import csv
 from flask_socketio import SocketIO
 
 # # Load the Random Forest Classifier model
-# filename = 'credit-card-model.pkl'
-# model = pickle.load(open('credit-card-model.pkl', 'rb'))
+filename = 'credit-card-model.pkl'
+model = pickle.load(open('credit-card-model.pkl', 'rb'))
 
 app = Flask(__name__)
 socketio = SocketIO(app)
@@ -34,7 +34,7 @@ def overview():
 @app.route('/predict', methods=['GET', 'POST'])
 def predict():
     if request.method == 'POST':
-         v1= float(request.form['v1'])
+        v1= float(request.form['v1'])
         v2= float(request.form['v2'])
         v3= float(request.form['v3'])
         v4= float(request.form['v4'])
@@ -64,9 +64,8 @@ def predict():
         v28 = float(request.form['v28'])
         v29 = float(request.form['v29'])
         data = np.array([[v1,v2,v3,v4,v5,v6,v7,v8,v9,v10,v11,v12,v13,v14,v15,v16,v17,v18,v19,v20,v21,v22,v23,v24,v25,v26,v27,v28,v29]])
-        # my_prediction = model.predict(data)
-        # return render_template('result.html', prediction=my_prediction[0])
-        return render_template('result.html', prediction='0')
+        my_prediction = model.predict(data)
+        return render_template('result.html', prediction=my_prediction[0])
     if 'loggedin' in session:
         return render_template('detection.html')
     return redirect(url_for('home'))

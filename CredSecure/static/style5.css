@@ -151,3 +151,38 @@ body {
 .guidelines-list li{
     margin-bottom: 5px; /* Space between bullet points */
 }
+
+
+.tc_wrap .tabs_content .tab_foot button {
+  width: 125px;
+  padding: 5px 10px;
+  background: transparent;
+  border: 1px solid;
+  border-radius: 25px;
+  cursor: pointer;
+  transition: all 0.5s ease;
+  color: var(--white);
+}
+
+.tc_wrap .tabs_content .tab_foot button.decline {
+  margin-right: 15px;
+  background: #fff; /* Changed background to white */
+  border-color: #fff; /* Set the border color to white */
+  color: var(--tabs-list-bg-clr); /* Text color contrasts with the background */
+}
+
+.tc_wrap .tabs_content .tab_foot button.agree {
+  background: var(--primary-clr);
+  border-color: var(--primary-clr);
+  color: var(--white);
+}
+
+.tc_wrap .tabs_content .tab_foot button.decline:hover {
+  background: var(--tabs-list-bg-clr); /* Changes background to match container on hover */
+  color: #fff; /* Text color changes to white on hover */
+}
+
+.tc_wrap .tabs_content .tab_foot button.agree:hover {
+  background: var(--btn-hvr);
+  border-color: var(--btn-hvr);
+}
