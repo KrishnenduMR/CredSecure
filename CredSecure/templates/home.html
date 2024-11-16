@@ -3,14 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CREDIT CARD FRAUD DETECTION SYSTEM</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='style1.css') }}">
+    <title>CredSecure</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
 <body>
     <div class="main">
         <div class="navbar">
             <div class="icon">
-                <h2 class="logo">CREDIT CARD FRAUD DETECTION SYSTEM</h2>
+                <h2 class="logo">CredSecure</h2>
             </div>
             <div class="menu">
                 <ul>
@@ -66,8 +66,8 @@
                 links.forEach(link => link.style.pointerEvents = 'auto');
                 alert('Logged In Successfully');
                 
-                // Redirect to overview.html
-                window.location.href = '{{ url_for('overview') }},id='overviewLink' ';
+                // Redirect to detection.html
+                window.location.href = '{{ url_for('predict') }}';
             } else {
                 alert('Invalid username or password. Please try again.');
             }

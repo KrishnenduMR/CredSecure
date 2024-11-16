@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8" />
+    <title>Contact Us - FraudShield Analytics</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style3.css') }}" />
+    <!-- Fontawesome CDN Link -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+</head>
+<body>
+    <div class="container">
+        <div class="content">
+            <div class="right-side">
+                <div class="topic-text">CONTACT US</div>
+                <p>Need assistance? Reach out anytime. We’re here to support you and ensure you get the most from our services. Your satisfaction is our priority!</p>
+                <form id="contactForm">
+                    <div class="input-box">
+                        <input type="text" id="name" placeholder="Enter your name" required />
+                    </div>
+                    <div class="input-box">
+                        <input type="email" id="email" placeholder="Enter your email" required />
+                    </div>
+                    <div class="input-box message-box">
+                        <textarea id="message" placeholder="Enter your message" required></textarea>
+                    </div>
+                    <div class="button">
+                        <input type="button" value="SEND" onclick="generateXML()" />
+                    </div>
+                </form>
+            </div>
+            <div class="team-members">
+                <h1>Our Team</h1>
+                <div class="team-members-grid">
+                    <div class="team-member">
+                        <p>Krishnendu M R</p>
+                        <div class="social-links">
+                            <a href="https://github.com/member1" target="_blank">
+                                <i class="fab fa-github"></i>
+                            </a>
+                            <a href="https://linkedin.com/in/member1" target="_blank">
+                                <i class="fab fa-linkedin"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="team-member">
+                        <p>Akshaya Srikrishna</p>
+                        <div class="social-links">
+                            <a href="https://github.com/member2" target="_blank">
+                                <i class="fab fa-github"></i>
+                            </a>
+                            <a href="https://linkedin.com/in/member2" target="_blank">
+                                <i class="fab fa-linkedin"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="team-member">
+                        <p>Anagha Srikrishna</p>
+                        <div class="social-links">
+                            <a href="https://github.com/member3" target="_blank">
+                                <i class="fab fa-github"></i>
+                            </a>
+                            <a href="https://linkedin.com/in/member3" target="_blank">
+                                <i class="fab fa-linkedin"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+      // Function to generate and download XML file
+      function generateXML() {
+        const name = document.getElementById('name').value;
+        const email = document.getElementById('email').value;
+        const message = document.getElementById('message').value;
+
+        if (!name || !email || !message) {
+          alert("All fields are required!");
+          return;
+        }
+
+        const xmlContent = `
+          <contact>
+            <name>${name}</name>
+            <email>${email}</email>
+            <message>${message}</message>
+          </contact>
+        `;
+
+        const blob = new Blob([xmlContent], { type: 'application/xml' });
+        const link = document.createElement('a');
+        link.href = URL.createObjectURL(blob);
+        link.download = 'contact_message.xml';
+        link.click();
+
+        document.getElementById('contactForm').reset();
+      }
+    </script>
+</body>
+</html>

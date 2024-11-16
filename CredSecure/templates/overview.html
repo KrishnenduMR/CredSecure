@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CredSecure Overview</title>
+  <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style5.css') }}">
+</head>
+<body>
+
+<div class="wrapper flex_align_justify">
+   <div class="tc_wrap">
+       <div class="tabs_list">
+         <ul>
+           <li data-tc="tab_item_1" class="active">Project Overview</li>
+           <li data-tc="tab_item_2">Research and Analysis</li>
+           <li data-tc="tab_item_3">Technology Stack</li>
+           <li data-tc="tab_item_4">User Guidelines</li>
+         </ul>
+       </div>
+       <div class="tabs_content">
+          <div class="tab_head">
+            <h2>Project Overview & Details</h2>
+          </div>
+          <div class="tab_body">
+            <!-- Project Overview Tab -->
+            <div class="tab_item tab_item_1">
+                <h3>Project Overview</h3>
+                <p>Provide an overview of the project here. You can describe the goals, scope, and the overall vision for CredSecure.</p>
+                <p><strong>Space for detailed description to be added.</strong></p>
+            </div>
+
+            <!-- Research and Analysis Tab -->
+            <div class="tab_item tab_item_2" style="display: none;">
+                <h3>Research and Analysis</h3>
+                <p>Provide the research findings, methodologies, and insights here. This section can include various analyses such as fraud detection models, data sources, and accuracy metrics.</p>
+                <p><strong>Space for research and analysis to be added.</strong></p>
+            </div>
+
+            <!-- Technology Stack Tab -->
+            <div class="tab_item tab_item_3" style="display: none;">
+                <h3>Technology Stack</h3>
+                <p>CredSecure employs a robust technology stack to ensure efficient and accurate fraud detection that includes:</p>
+                <ul class="technology-list">
+                    <li>Python for backend development</li>
+                    <li>Flask for web framework</li>
+                    <li>Machine Learning Libraries (e.g., scikit-learn, numpy)</li>
+                    <li>Data Preprocessing Techniques (e.g., Undersampling, Oversampling)</li>
+                    <li>Classification Algorithms (e.g., Random Forest, Decision Tree,...)</li>
+                    <li>Data Visualization Tools (e.g., Matplotlib, Seaborn)</li>
+                </ul><br>
+                <p>In conclusion, CredSecure leverages a robust technology stack, including Python, Flask, and machine learning libraries, to deliver a scalable and efficient fraud detection system. Our use of data visualization tools ensures actionable insights, empowering businesses to detect and prevent fraud in real time.</p>
+            </div>
+
+            <!-- User Guidelines Tab -->
+            <div class="tab_item tab_item_4" style="display: none;">
+                <h3>User Guidelines</h3>
+                <p>To ensure a safe and effective experience, users are encouraged to follow these guidelines:</p>
+                <ul class="guidelines-list">
+                    <li>Provide accurate and complete information during registration.</li>
+                    <li>Report any suspicious activity immediately.</li>
+                    <li>Use strong passwords and change them regularly.</li>
+                    <li>Avoid sharing personal or financial information with untrusted sources.</li>
+                    <li>Regularly review transaction history for any unauthorized activities.</li>
+                    <li>Keep your software and devices updated to protect against vulnerabilities.</li>
+                </ul><br>
+                <p>By adhering to these guidelines, users can significantly enhance their security and contribute to a safer environment for everyone. Together, we can protect against fraud and ensure a secure experience with FraudShield Analytics.</p>
+            </div>
+          </div>
+       </div>
+   </div>
+</div>
+
+<script type="text/javascript" src="{{ url_for('static', filename='script.js') }}"></script>
+
+</body>
+</html>

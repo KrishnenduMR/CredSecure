@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Result - CredSecure</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <script src="https://unpkg.com/ionicons@5.4.0/dist/ionicons.js"></script>
+    <style>
+        .results-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 80vh; /* Full viewport height */
+            margin: 0 auto;
+        }
+        .result {
+            background: linear-gradient(to top, rgba(0,0,0,0.8) 50%, rgba(0,0,0,0.8) 50%);
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            width: 80%; /* Adjust the width if needed */
+            max-width: 600px; /* Max width to control the container size */
+            color: #fff;
+        }
+        .result h1 {
+            color: #ff7200;
+            font-size: 60px;
+            margin: 0 0 30px 0; 
+        }
+        .output-message.green {
+            font-size: 25px;
+            color: green;
+            margin: 20px 0; 
+        }
+        .output-message.red {
+            font-size: 25px;
+            margin: 20px 0;
+            color: rgb(255, 0, 0);
+        }
+        .btnn {
+            width: 200px;
+            height: 40px;
+            background: #ff7200;
+            border: none;
+            margin-top: 30px;
+            font-size: 18px;
+            border-radius: 10px;
+            cursor: pointer;
+            color: #fff;
+            transition: 0.4s ease;
+        }
+        .btnn:hover {
+            background: #fff;
+            color: #ff7200;
+        }
+    </style>
+</head>
+<body>
+    <div class="main">
+        <div class="navbar">
+            <div class="icon">
+                <h2 class="logo">CredSecure</h2>
+            </div>
+            <div class="menu">
+                <ul>
+                    <li><a href="{{ url_for('home') }}">HOME</a></li>
+                    <li><a href="{{ url_for('about') }}">ABOUT</a></li>
+                    <li><a href="{{ url_for('overview') }}">OVERVIEW</a></li>
+                    <li><a href="{{ url_for('predict') }}">DETECTION</a></li>
+                    <li><a href="{{ url_for('contact') }}">CONTACT</a></li>
+                </ul>
+            </div>
+            <div class="search">
+                <input class="srch" type="search" placeholder="Type To text">
+                <a href="https://www.google.com/"><button class="btn">Search</button></a>
+            </div>
+        </div> <!-- .navbar -->
+        
+        <div class="content">
+            <div class="center">
+                <div class="results-container">
+                    <div class="result">
+                        <h1>Prediction Result</h1>
+                        <p id="result-text">Your prediction result will be displayed here.</p>
+                        <button class="btnn" onclick="goHome()">Go Back</button>
+                    </div>
+                </div>
+            </div>
+        </div> <!-- .content -->
+    </div> <!-- .main -->
+    <script>
+        // Assuming Flask passes 'prediction' as a string ('0' for Normal, '1' for Fraud)
+        const prediction = "{{ prediction }}"; // Ensure prediction is correctly passed from Flask
+        const outputMessage = document.getElementById('result-text');
+    
+        if (prediction === '0') {
+            outputMessage.innerHTML = '<h2>Normal Transaction</h2>';
+            outputMessage.className = 'output-message green';
+        }
+	else {
+            outputMessage.innerHTML = '<h2>Fraud Transaction</h2>';
+            outputMessage.className = 'output-message red';
+        }
+    
+        // Function to navigate back to home page
+        function goHome() {
+            window.location.href = "{{ url_for('home') }}";
+        }
+    </script>
+</body>
+</html>
