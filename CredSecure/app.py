@@ -4,8 +4,8 @@ from flask import Flask, render_template, request,url_for,session,redirect
 import pickle
 import numpy as np
 # Load the Random Forest CLassifier model
-filename = 'credit-card-model.pkl'
-model = pickle.load(open('credit-card-model.pkl', 'rb'))
+# filename = 'credit-card-model.pkl'
+# model = pickle.load(open('credit-card-model.pkl', 'rb'))
 app = Flask(__name__)
 socketio = SocketIO(app)
 app.secret_key = 'C16'
@@ -62,10 +62,11 @@ def predict():
         v28 = float(request.form['v28'])
         v29 = float(request.form['v29'])
         data = np.array([[v1,v2,v3,v4,v5,v6,v7,v8,v9,v10,v11,v12,v13,v14,v15,v16,v17,v18,v19,v20,v21,v22,v23,v24,v25,v26,v27,v28,v29]])
-        my_prediction = model.predict(data)
-        return render_template('result.html', prediction=my_prediction[0])
-    if 'loggedin' in session:
-        return render_template('detection.html')
+        # my_prediction = model.predict(data)
+        # return render_template('result.html', prediction=my_prediction[0])
+        return render_template('result.html')
+    if "loggedin" in session:
+       return render_template('detection.html')
     return redirect(url_for('home'))
 
 # Result page route
@@ -92,7 +93,7 @@ def login():
     password = request.form['password']
     if username == 'admin' and password == 'password':
         session['loggedin'] = True  # Set login status
-        return redirect(url_for('overview'))
+        return redirect(url_for('predict'))
     return render_template('home.html', error='Invalid username or password.')
 
 @app.route('/logout')

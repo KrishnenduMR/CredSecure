@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CredSecure</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style1.css') }}">
 </head>
 <body>
     <div class="main">
@@ -49,28 +49,9 @@
         </div>
     </div>
     <script>
-        // Initially disable the links
-        const links = document.querySelectorAll('.disabled-link');
-        links.forEach(link => link.style.pointerEvents = 'none');
-
         document.getElementById('loginform').addEventListener('submit', function(event) {
-            event.preventDefault(); // Prevent the form from submitting
-
-            // Get the username and password values
-            const username = document.getElementById('username').value;
-            const password = document.getElementById('password').value;
-
-            // Perform a simple check (replace this with actual authentication logic)
-            if (username === 'admin' && password === 'password') {
-                // Enable the links after successful login
-                links.forEach(link => link.style.pointerEvents = 'auto');
-                alert('Logged In Successfully');
-                
-                // Redirect to detection.html
-                window.location.href = '{{ url_for('predict') }}';
-            } else {
-                alert('Invalid username or password. Please try again.');
-            }
+            // Enable the links when the form is submitted
+            links.forEach(link => link.style.pointerEvents = 'auto');
         });
     </script>
     <script src="https://unpkg.com/ionicons@5.4.0/dist/ionicons.js"></script>
