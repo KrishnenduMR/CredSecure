@@ -25,17 +25,29 @@
           <div class="tab_body">
             <!-- Project Overview Tab -->
             <div class="tab_item tab_item_1">
-                <h3>Project Overview</h3>
-                <p>Provide an overview of the project here. You can describe the goals, scope, and the overall vision for CredSecure.</p>
-                <p><strong>Space for detailed description to be added.</strong></p>
-            </div>
-
-            <!-- Research and Analysis Tab -->
-            <div class="tab_item tab_item_2" style="display: none;">
-                <h3>Research and Analysis</h3>
-                <p>Provide the research findings, methodologies, and insights here. This section can include various analyses such as fraud detection models, data sources, and accuracy metrics.</p>
-                <p><strong>Space for research and analysis to be added.</strong></p>
-            </div>
+              <h3>Project Overview</h3>
+              <p>The CredSecure project is designed to detect fraudulent credit card transactions using machine learning techniques. The main goal of this system is to identify fraudulent activities in real-time, providing users with immediate feedback on the legitimacy of transactions. This project utilizes a Random Forest model, a robust and efficient algorithm known for its ability to handle imbalanced datasets and perform well in classification tasks such as fraud detection.</p>
+              <p>The system aims to balance high accuracy, precision, recall, and ROC-AUC scores to ensure it can reliably identify fraud while minimizing false positives. The interface, built using Flask and Python, is user-friendly and designed to integrate seamlessly with various transaction systems for real-time processing.</p>
+              <p>This application serves as a practical solution for financial institutions, leveraging machine learning to help prevent financial fraud and reduce operational losses due to fraudulent activities.</p>
+          </div>
+          
+          <!-- Research and Analysis Tab -->
+          <div class="tab_item tab_item_2" style="display: none;">
+              <h3>Research and Analysis</h3>
+              <p>In the CredSecure project, we explored multiple machine learning models to assess their effectiveness in detecting fraudulent credit card transactions. The models tested include Random Forest, XGBoost, Decision Trees, and Logistic Regression. Each model was evaluated using various performance metrics: accuracy, precision, recall, F1 score, and ROC-AUC. These metrics are critical in fraud detection applications, where the balance between detecting fraud (recall) and avoiding false alarms (precision) is essential.</p>
+              <p><strong>Metrics Used:</strong></p>
+              <ul>
+                  <li><strong>Accuracy:</strong> Measures the overall correctness of the model, indicating how well the model classifies both fraudulent and non-fraudulent transactions.</li>
+                  <li><strong>Precision:</strong> Indicates the proportion of true positives (fraudulent transactions detected) among all predicted frauds, minimizing false positives (non-fraudulent transactions incorrectly flagged as fraudulent).</li>
+                  <li><strong>Recall:</strong> Measures the proportion of actual fraudulent transactions correctly identified by the model, minimizing false negatives (fraudulent transactions that are missed).</li>
+                  <li><strong>F1 Score:</strong> The harmonic mean of precision and recall, providing a balanced measure of the model’s ability to detect fraud while minimizing false alarms.</li>
+                  <li><strong>ROC-AUC:</strong> The area under the Receiver Operating Characteristic curve, representing the model’s ability to distinguish between classes. A higher ROC-AUC indicates better model performance in detecting fraudulent transactions across all classification thresholds.</li>
+              </ul>
+              <p>After comparing all models, the Random Forest model was found to perform the best in terms of both accuracy and recall, while also achieving an optimal F1 score and ROC-AUC. The model demonstrated a high ability to correctly classify fraudulent transactions without overfitting, ensuring consistent performance across training and testing datasets.</p>
+              <p>In contrast, XGBoost exhibited excellent accuracy but had a slight drop in recall, leading to some missed fraudulent transactions, especially in test data. Decision Trees, while interpretable, showed signs of overfitting, which resulted in lower generalization ability on unseen data. Logistic Regression had the lowest performance in terms of recall and F1 score, failing to capture complex patterns in the data effectively.</p>
+              <p>The Random Forest model was ultimately selected for integration into the application due to its excellent balance between precision, recall, and ROC-AUC, making it the most reliable and efficient choice for real-time fraud detection.</p>
+          </div>
+          
 
             <!-- Technology Stack Tab -->
             <div class="tab_item tab_item_3" style="display: none;">
